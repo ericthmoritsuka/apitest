@@ -1,0 +1,25 @@
+.BGPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.basicInfo {
+  display: grid;
+  max-width: 8ch;
+}
+
+.post,
+.alter,
+.delete {
+  display: grid;
+  max-width: 45ch;
+}
+
+.header {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.alert {
+  color: red;
+}

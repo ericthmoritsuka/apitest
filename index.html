@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="BGPage">
+      <header class="header">
+        <h1>BLOGPOSTING API TESTER</h1>
+        <p>ugly but hopefully functional</p>
+      </header>
+      <div class="forms">
+        <form class="basicInfo">
+          <h2>Insert Basic Info</h2>
+          <label for="email"
+            >Insert the user's e-mail or leave it blank for the default
+            (test@liferay.com)</label
+          >
+          <input type="email" name="email" id="email" />
+          <label for="password"
+            >Insert the user's password or leave it blank for the default
+            (learn)</label
+          >
+          <input type="password" name="password" id="password" />
+          <label for="blogID"
+            >Write here the id of the BLOG you want to use.</label
+          >
+          <input type="text" name="blogID" id="blogID" />
+          <h3 class="basicErrorMessage alert"></h3>
+          <button id="BTBasic">Enviar</button>
+        </form>
+        <br />
+        <hr />
+        <form class="getPosts">
+          <h2>Get Posts</h2>
+          <p>Click here to get all the posts from the blog:</p>
+          <button id="getPosts">Get Posts</button>
+        </form>
+        <br />
+        <hr />
+        <form class="post">
+          <h2>Posting</h2>
+          <label for="articletitle">Title</label>
+          <input type="text" name="articleTitle" id="articleTitle" />
+          <label for="articleBody">Body</label>
+          <textarea
+            name="articleBody"
+            id="articleBody"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <h3 class="postErrorMessage alert"></h3>
+          <button id="BTArticlePost">Post</button>
+        </form>
+        <br />
+        <hr />
+        <div class="alter">
+          <h2>Updating a Post</h2>
+          <label for="postID"
+            >Insert here the ID of the post you want to modify</label
+          >
+          <input type="text" name="postID" id="postID" />
+          <label for="updatedTitle"
+            >Write here the new Title for the post or leave it blank if you do
+            not want to change it:</label
+          >
+          <input type="text" name="updatedTitle" id="updatedTitle" />
+          <label for="updatedBody"
+            >Write here the new content for the post or leave it blak if you do
+            not want to change it:</label
+          >
+          <textarea
+            name="updatedBody"
+            id="updatedBody"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <button id="articleUpdate">Update</button>
+        </div>
+        <br />
+        <hr />
+        <div class="delete">
+          <label for="deleteID"
+            >Write here the id of the post you want to delete:</label
+          >
+          <input type="text" name="deleteID" id="deleteID" />
+          <button id="articleDelete">Delete</button>
+        </div>
+      </div>
+      <div class="blogContent">
+        <h1>conteudo</h1>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
