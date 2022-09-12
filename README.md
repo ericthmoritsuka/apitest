@@ -121,12 +121,73 @@ function DELETE_BLOG_BY_ID(blogId) {
 
 1.  Send a pull request to **_brianchandotcom_**, replacing the PLACEHOLDER text below with the JavaScript commands.
 
-    <details>
-    	<summary>Show JavaScript commands.</summary>
+<details>
+  <summary>Show JavaScript commands.</summary>
 
-        PLACEHOLDER
+    ```
+    //fetch function to post a document to Documents and Media
+    //it may be necessary to change the siteId value and the authorization field (password) in headers.
+    //Intern: Eric Moritsuka
 
-    </details>
+    //In index.html:
+    //(I created the file so I could test the api by sending an actual file).
+
+    <!DOCTYPE html>
+
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+      <body>
+        <form id="formDocument">
+          <input type="file" id="document" name="img" accept="image/*" />
+          <button id="button">enviar</button>
+        </form>
+
+        <script src="documentFetch.js"></script>
+
+      </body>
+    </html>
+
+
+    //In documentFetch.js
+    const siteId = "20121";
+
+    const button = document.getElementById("button");
+    const formDocument = document.getElementById("formDocument");
+
+    const clickHandler = (event) => {
+      const myFileHere = document.getElementById("document");
+
+      const form = new FormData();
+      form.append("file", myFileHere.files[0]);
+      event.preventDefault();
+      DOCUMENT_POST(form);
+    };
+
+    function DOCUMENT_POST(formData) {
+      fetch(
+        `http://localhost:8080/o/headless-delivery/v1.0/sites/${siteId}/documents`,
+        {
+          method: "POST",
+          headers: new Headers({
+            Authorization: "Basic " + btoa("test@liferay.com:learn"),
+          }),
+          body: formData,
+        }
+      )
+        .then((resposta) => resposta.json())
+        .then((data) => console.log(data));
+    }
+
+    button.addEventListener("click", clickHandler);
+
+    ```
+
+        </details>
 
 ## React and REST
 
