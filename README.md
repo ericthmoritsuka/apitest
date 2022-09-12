@@ -126,7 +126,7 @@ function DELETE_BLOG_BY_ID(blogId) {
 
     ```
     //fetch function to post a document to Documents and Media
-    //it may be necessary to change the siteId value and the authorization field (password) in headers.
+    //it may be necessary to change the siteId value and the authorization field (password) in headers (in documentFetch.js).
     //Intern: Eric Moritsuka
 
     //In index.html:
@@ -151,6 +151,7 @@ function DELETE_BLOG_BY_ID(blogId) {
 
       </body>
     </html>
+
 
 
     //In documentFetch.js
@@ -187,7 +188,7 @@ function DELETE_BLOG_BY_ID(blogId) {
 
     ```
 
-        </details>
+</details>
 
 ## React and REST
 
